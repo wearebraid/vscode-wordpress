@@ -39,7 +39,7 @@ The following extensions should be searched and installed via the VS Code Extens
 
 Once these extensions are installed, you will need to either reload your VS Code workspace or quit and relaunch the application.
 
-##Setup
+## Setup
 
 ### Exclusions
 There are some directories that we do not want to lint with `phpcs` because they do not represent our own code and we cannot guarantee their level of quality. In your VS Code User Settings (`Command + ,`), add the following block of exceptions:
