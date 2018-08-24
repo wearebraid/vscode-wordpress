@@ -13,9 +13,15 @@ Once you have Composer installed, run the following commands to install needed p
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) with `composer global require "squizlabs/php_codesniffer=*"`
 - [Wordpress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) with `composer global require "wp-coding-standards/wpcs"`
 
-You then need to add the Composer `bin` directory to your terminal's `PATH`. If you're using the default bash shell on macOS, this can be done with the following command:
+You then need to add the Composer `bin` directory to your terminal's `PATH`. If you're using the default bash shell on macOS, this can by adding the following item to your `~/.bash_rc` profile:
 
-- `export PATH=$PATH:~/.composer/vendor/bin`
+- `~/.composer/vendor/bin`
+
+Your `PATH` variable will then look something like this:
+
+- `/usr/local/bin:/usr/bin:~/.composer/vendor/bin`
+
+If you need a guide on how the `PATH` variable works, you can [read about it here](https://medium.com/@jalendport/what-exactly-is-your-shell-path-2f076f02deb4)
 
 If you are not using the default bash shell on macOS, we'll trust you're experienced enough to add the correct path inclusion to your shell's configuration file.
 
