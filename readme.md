@@ -8,7 +8,11 @@ This guide will help you get started with best practices for WordPress developme
 - install [VS Code](https://code.visualstudio.com/download)
 - install [Composer](https://getcomposer.org/download/), which is a package manager for PHP applications
 
-Once you have Composer installed, run the following commands to install needed packages globally on your machine.
+Once composer is downloaded you'll want to move it to your `usr/local/bin` directory with the following command:
+
+- `mv composer.phar /usr/local/bin/composer`
+
+Once you have Composer installed and moved to the correct location, open a new terminal session and run the following commands to install needed packages globally on your machine.
 
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) with `composer global require "squizlabs/php_codesniffer=*"`
 - [Wordpress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) with `composer global require "wp-coding-standards/wpcs"`
