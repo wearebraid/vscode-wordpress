@@ -39,7 +39,7 @@ The installed coding standards are PEAR, Zend, PSR2, MySource, Squiz, PSR1, PSR1
 ### Necessary VS Code Extensions
 The following extensions should be searched and installed via the VS Code Extensions panel (`Command + Shift + X`).
 
-- `EditorCongig for VS Code`
+- `EditorConfig for VS Code`
 - `phpcs`
 
 Once these extensions are installed, you will need to either reload your VS Code workspace or quit and relaunch the application.
