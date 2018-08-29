@@ -3,14 +3,16 @@ This guide will help you get started with best practices for WordPress developme
 
 <img src="./assets/example-lint.jpg">
 
-## Prerequisites 
+## Prerequisites
 ### Global dependencies
 - install [VS Code](https://code.visualstudio.com/download)
 - install [Composer](https://getcomposer.org/download/), which is a package manager for PHP applications
 
 Once composer is downloaded you'll want to move it to your `usr/local/bin` directory with the following command:
 
-- `mv composer.phar /usr/local/bin/composer`
+```sh
+mv composer.phar /usr/local/bin/composer
+```
 
 Once you have Composer installed and moved to the correct location, open a new terminal session and run the following commands to install needed packages globally on your machine.
 
@@ -35,12 +37,12 @@ To ensure that everything is installed correctly, open a new terminal shell and 
 The installed coding standards are PEAR, Zend, PSR2, MySource, Squiz, PSR1, PSR12, WordPress-VIP, WordPress, WordPress-Extra, WordPress-Docs and WordPress-Core
 ```
 
-
 ### Necessary VS Code Extensions
 The following extensions should be searched and installed via the VS Code Extensions panel (`Command + Shift + X`).
 
 - `EditorCongig for VS Code`
 - `phpcs`
+- `ESLint`
 
 Once these extensions are installed, you will need to either reload your VS Code workspace or quit and relaunch the application.
 
@@ -57,7 +59,7 @@ There are some directories that we do not want to lint with `phpcs` because they
     "*/node_modules/*"
 ],
 ```
-This will prevent `phpcs` from barking at you for things you can't control. Win!
+This will prevent `phpcs` from barking at you for things you can't control. Win! You can also prevent JS linting with a `.eslintignore` file using `.gitignore` syntax.
 
 ### Per-Project
 #### phpcs.xml
@@ -67,12 +69,24 @@ At the root of your project directory you'll want to include a `phpcs.xml` file.
 
 If your `phpcs.xml` is in the root of your git repo, but you open the `wp-content/themes` directory directly in your editor, then VS Code will not find your `phpcs.xml` file and your linting will uses default settings and not the WordPress specific settings.
 
-#### editorconfig
-the `editorconfig` file also goes in the root of your project directory. This tells your editor what preferences to default to on a project for tabs vs spaces, level of indention, whether new lines should be required at the end of files, etc.
+#### .editorconfig
+The `.editorconfig` file also goes in the root of your project directory. This tells your editor what preferences to default to on a project for tabs vs spaces, level of indention, whether new lines should be required at the end of files, etc.
 
-There is an example [editorconfig](editorconfig) file included in this repo.
+There is an example [editorconfig](.editorconfig) file included in this repo.
 
-## Verifying 
+#### .eslintrc.js
+
+The `.eslintrc.js` instructs eslint what coding standards to use when linting javascript files. WordPress has it’s own [JS coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/) and the example `.eslintrc.js` file in this directory is configured to follow those standards. They're kind ugly, but at least it's a standard!
+
+Unlike `phpcs`, you'll want to install `eslint` directly in each project along with the standards used on that project.
+
+```sh
+npm install eslint eslint-config-wordpress babel-eslint --save-dev
+```
+
+When not using WordPress, our coding style preference is [standard](https://github.com/standard/eslint-config-standard).
+
+## Verifying
 Once you have installed the prerequisites, added the `phpcs.xml` and `editorconfig` files to your project root, and opened your project in VS Code (ensuring that you're opening it from the root and not a subdirectory in your project) then you should now have linting in place as prescribed by the WordPress coding standards. An easy way to check this is working is to ensure that your editor now barks at you for using spaces for your `.php` files instead of tabs. Yes, spaces are usually correct for indentation, but that's the WordPress coding standards for you. `¯\_(ツ)_/¯`
 
 <img src="./assets/lol.jpg">
